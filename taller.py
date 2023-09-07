@@ -1,42 +1,47 @@
-diccionarioPersonas={}   
-
+diccionarioPersonas = {}
 
 while True:
     print("Bienvenido al programa de diccionario")
-    print("Por favor selecione la acción que desa realizar:")
-    print("1)si desea agregar")
-    print("2)si desea actualizar")
-    print("3)si desea consultar")
-    print("4)si desea eliminar")
-    print("5)mostrar todos los elementos del diccionario")
-    print("6)si desea salir del programa")
+    print("Por favor seleccione la acción que desea realizar:")
+    print("1) Agregar persona")
+    print("2) Actualizar teléfono")
+    print("3) Consultar teléfono")
+    print("4) Eliminar persona")
+    print("5) Mostrar todos los elementos del diccionario")
+    print("6) Salir del programa")
     action = input()
-    
+
     if action == '1':
-        nom=input("Ingrese la nombre a agregar:")
-        tele=input('ingrese un telefono: ')
-        diccionarioPersonas[nom]=tele
+        nom = input("Ingrese el nombre a agregar: ")
+        tele = input('Ingrese un teléfono: ')
+        diccionarioPersonas[nom] = tele
     elif action == '2':
-        actilizarvalor=input("Persona a actualizar: ")
-        cel = input("ingrese nuevo telefono a actualizar:")
-        diccionarioPersonas[actilizarvalor]=cel
-        print("Diccionario actualizado: ",diccionarioPersonas)
+        actualizarvalor = input("Persona a actualizar: ")
+        cel = input("Ingrese nuevo teléfono a actualizar: ")
+        diccionarioPersonas[actualizarvalor] = cel
+        print("Diccionario actualizado: ", diccionarioPersonas)
     elif action == '3':
-       print("Diccionario: ", diccionarioPersonas)
-       nombreid=(input("Persona a consultar"))
-       if nombreid in diccionarioPersonas:
-        nombre=diccionarioPersonas[nombreid]
-       ("el nombre consultado es: ",nombre)
-    elif action =='4':
         print("Diccionario: ", diccionarioPersonas)
-        nombreElminiar=input("el elemento ha sido eliminado. ")
-        if nombreElminiar in diccionarioPersonas:
-            diccionarioPersonas.pop(nombreElminiar)
-    elif action =='5':
-        print("Todos los elementos de la lista son: ",diccionarioPersonas)  
-    elif action =='6':
+        nombreid = input("Persona a consultar: ")
+        if nombreid in diccionarioPersonas:
+            nombre = diccionarioPersonas[nombreid]
+            print("El teléfono consultado es:", nombre)
+        else:
+            print("Persona no encontrada en el diccionario.")
+    elif action == '4':
+        print("Diccionario: ", diccionarioPersonas)
+        nombreEliminar = input("Ingrese el nombre a eliminar: ")
+        if nombreEliminar in diccionarioPersonas:
+            diccionarioPersonas.pop(nombreEliminar)
+            print("El elemento ha sido eliminado.")
+        else:
+            print("Persona no encontrada en el diccionario.")
+    elif action == '5':
+        print("Todos los elementos del diccionario son: ", diccionarioPersonas)
+    elif action == '6':
         print("Has salido del programa.")
         break
     else:
-        ("Intente nuevamente")    
+        print("Opción no válida. Intente nuevamente.")
+
     
